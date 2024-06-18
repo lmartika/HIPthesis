@@ -1,4 +1,4 @@
-Sometimes pdf figures (like the ones you picked up from arXiv source folders) may include fonts that don't get embedded properly in a pdf compled with e.g. pdflatex. For printing with Unigrafia all the fonts need to be embeddid in the document.
+Sometimes pdf figures (like the ones you picked up from arXiv source folders) may include fonts that don't get embedded properly in a pdf compled with e.g. pdflatex. For printing with Unigrafia all the fonts need to be embedded in the document.
 
 Check if everything is alright with pdffonts:
 
