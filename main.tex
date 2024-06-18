@@ -1,0 +1,121 @@
+\documentclass[12pt]{book}
+
+\usepackage{appendix}
+\usepackage{pdfpages}
+
+\usepackage{graphicx}
+\usepackage[textwidth=450pt]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+
+\usepackage{lineno}
+
+\usepackage{hyperref}
+\usepackage{lipsum}
+
+\usepackage{cite}
+
+\usepackage{setspace}
+
+
+\usepackage{xcolor}
+
+\usepackage{tikz}
+
+\usepackage{multirow}
+
+
+\input{Template/customizations.tex}
+%\usepackage[nottoc,numbib]{tocbibind}
+
+\begin{document}
+
+%%% To play with line spacing
+%\onehalfspacing
+\setstretch{1.1}
+
+\frontmatter
+
+
+%%%%%%% If not using the pdf cover
+%\title{Thesis title}
+%\author{Author}
+%\date{\today}
+%\maketitle
+
+%%%%% These need to be compiled separately
+%\includepdf{HIP-thesis-cover/HIP-thesis-cover.pdf}
+\includepdf{HIP-thesis-cover/HIP-thesis-cover-internal.pdf}
+%\cleardoublepage{}
+
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{\thepage}
+%\fancyhead[LO,RE]{\thechapter}
+%\fancyhead[LO,RE]{\textsl{\rightmark}}
+\fancyhead[LO,RE]{\nouppercase{\rightmark}}
+\setlength{\headheight}{15pt}
+\fancyfoot{}
+
+
+
+%%%% For producing the page with info on supervisor and examiners
+\noindent \textbf{Supervisor} \\
+\indent (Title) Supervisor \\
+\indent Affiliation \\
+
+\thispagestyle{empty}
+\noindent \textbf{Pre-examiners} \\
+\indent (Title) Pre-examiner 1 \\
+\indent (Position and) affiliation
+\vspace{0.1 cm} \\
+\indent Pre-examiner 2 \\
+\indent (Position and) affiliation \\
+
+\noindent \textbf{Opponent} \\
+\indent (title) Opponent \\
+\indent Affiliation \\
+
+\vfill
+
+\noindent ISBN XXX-XXX-XX-XXXX-X (paper)\\
+\noindent ISSN XXXX-XXXX (print) \\
+\noindent Printed by Unigrafia Oy Yliopistopaino \\
+\\
+
+\noindent ISBN XXX-XXX-XX-XXXX-X  (pdf) \\
+\noindent ISSN XXXX-XXXX (online) \\
+\noindent Published electronically at \url{https://ethesis.helsinki.fi/} \\
+
+\noindent Helsinki 20XX
+
+
+\newpage
+%%%%
+
+\input{Chapters/abstract.tex}
+
+\input{Chapters/acknowledgements.tex} % contains acknowledgements
+ 
+\tableofcontents
+
+\mainmatter
+
+\input{Chapters/introduction.tex}
+
+\input{Chapters/conclusions.tex}
+
+\appendix
+
+\input{Chapters/appendix.tex}
+
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{hieeetr}
+\bibliography{Bibliography/bibliography}% Selects .bib file AND prints bibliography
+
+\end{document}

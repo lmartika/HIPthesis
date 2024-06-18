@@ -1,0 +1,24 @@
+Sometimes pdf figures (like the ones you picked up from arXiv source folders) may include fonts that don't get embedded properly in a pdf compled with e.g. pdflatex. For printing with Unigrafia all the fonts need to be embeddid in the document.
+
+Check if everything is alright with pdffonts:
+
+pdffonts document.pdf
+
+The output is something like:
+
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+NROPUP+CMCSC10                       Type 1            Custom           yes yes no     437  0
+EDEFKW+CMR12                         Type 1            Custom           yes yes no     440  0
+EXDMPP+CMBX12                        Type 1            Custom           yes yes no     443  0
+....
+
+The third column ("emb") tells if the font has been embedded properly. If there's a font with a "no" you can e.g. use ghostscript:
+
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dEmbedAllFonts=true -sOutputFile=docu_embedded.pdf -f document.pdf
+
+The output tells you which pages had fonts that needed to be embedded
+
+
+
+Original instructions from https://www.karlrupp.net/2016/01/embed-all-fonts-in-pdfs-latex-pdflatex/ but you never know when the info disappears.
